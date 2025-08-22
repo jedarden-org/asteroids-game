@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: [self-hosted, jedarden-org-apexalgo-iad-runners]
     
     steps:
     - name: Checkout code

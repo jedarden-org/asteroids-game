@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: self-hosted
+    runs-on: [self-hosted, jedarden-org-apexalgo-iad-runners]
     permissions:
       contents: read
       packages: write
@@ -63,7 +63,7 @@ jobs:
 
   deploy:
     needs: build-and-push
-    runs-on: self-hosted
+    runs-on: [self-hosted, jedarden-org-apexalgo-iad-runners]
     if: github.ref == 'refs/heads/main'
     
     steps:
