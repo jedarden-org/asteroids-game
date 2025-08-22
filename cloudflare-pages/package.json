@@ -1,0 +1,13 @@
+{
+  "name": "asteroid-game-cloudflare",
+  "version": "1.0.0",
+  "description": "Classic Asteroids game for Cloudflare Pages",
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name=asteroid-game",
+    "preview": "wrangler pages dev .",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

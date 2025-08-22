@@ -1,0 +1,10 @@
+name = "asteroid-game"
+compatibility_date = "2024-01-01"
+
+[env.production]
+routes = [
+  { pattern = "yourdomain.com/*", zone_name = "yourdomain.com" }
+]
+
+[[env.production.pages_build_output_dir]]
+value = "."
