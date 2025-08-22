@@ -4,6 +4,8 @@ A classic Asteroids game built with HTML5 Canvas and JavaScript using Test-Drive
 
 [![Docker Build](https://github.com/jedarden-org/asteroids-game/actions/workflows/docker-build-deploy.yml/badge.svg)](https://github.com/jedarden-org/asteroids-game/actions/workflows/docker-build-deploy.yml)
 [![Tests](https://github.com/jedarden-org/asteroids-game/actions/workflows/test.yml/badge.svg)](https://github.com/jedarden-org/asteroids-game/actions/workflows/test.yml)
+[![Release](https://img.shields.io/github/v/release/jedarden-org/asteroids-game)](https://github.com/jedarden-org/asteroids-game/releases/latest)
+[![Docker Pulls](https://img.shields.io/badge/docker-ghcr.io-blue)](https://ghcr.io/jedarden-org/asteroids-game)
 
 ## 🎮 Features
 
@@ -26,11 +28,11 @@ A classic Asteroids game built with HTML5 Canvas and JavaScript using Test-Drive
 ### Using Docker (Recommended)
 
 ```bash
-# Pull from GitHub Container Registry
-docker pull ghcr.io/jedarden-org/asteroids-game:latest
+# Pull stable release from GitHub Container Registry
+docker pull ghcr.io/jedarden-org/asteroids-game:v1.0.0
 
 # Run the game
-docker run -d -p 80:80 ghcr.io/jedarden-org/asteroids-game:latest
+docker run -d -p 80:80 ghcr.io/jedarden-org/asteroids-game:v1.0.0
 ```
 
 Access the game at: http://localhost
