@@ -1,8 +1,11 @@
-# Asteroids Game
+# Asteroids Game 🚀
 
-A classic Asteroids arcade game built with HTML5 Canvas, JavaScript, and Test-Driven Development using Playwright.
+A classic Asteroids game built with HTML5 Canvas and JavaScript using Test-Driven Development (TDD).
 
-## Features
+[![Docker Build](https://github.com/jedarden-org/asteroids-game/actions/workflows/docker-build-deploy.yml/badge.svg)](https://github.com/jedarden-org/asteroids-game/actions/workflows/docker-build-deploy.yml)
+[![Tests](https://github.com/jedarden-org/asteroids-game/actions/workflows/test.yml/badge.svg)](https://github.com/jedarden-org/asteroids-game/actions/workflows/test.yml)
+
+## 🎮 Features
 
 - **Classic Gameplay**: Navigate your spaceship through an asteroid field
 - **Controls**:
@@ -16,22 +19,31 @@ A classic Asteroids arcade game built with HTML5 Canvas, JavaScript, and Test-Dr
 - **Score Tracking**: Points for destroying asteroids (20/50/100 based on size)
 - **Progressive Difficulty**: More asteroids spawn as score increases
 - **Offline Capable**: No external dependencies, runs completely offline
-- **Dockerized**: Containerized for easy deployment
+- **Dockerized**: Containerized for easy deployment with GHCR integration
 
-## Quick Start
+## 🚀 Quick Start
 
-### Using Docker
+### Using Docker (Recommended)
 
 ```bash
-# Build and run with Docker
-docker build -t asteroid-game .
-docker run -d -p 8080:80 --name asteroid-game asteroid-game
+# Pull from GitHub Container Registry
+docker pull ghcr.io/jedarden-org/asteroids-game:latest
 
-# Or use Docker Compose
-docker-compose up -d
+# Run the game
+docker run -d -p 80:80 ghcr.io/jedarden-org/asteroids-game:latest
 ```
 
-Access the game at: http://localhost:8080
+Access the game at: http://localhost
+
+### Using Docker Compose
+
+```bash
+# Production deployment
+docker-compose -f docker-compose.prod.yml up -d
+
+# Development
+docker-compose up -d
+```
 
 ### Local Development
 
@@ -49,7 +61,7 @@ npm test
 npm run test:headed
 ```
 
-## Testing
+## 🧪 Testing
 
 The game is built using Test-Driven Development with Playwright:
 
@@ -59,9 +71,20 @@ npm test
 
 # Test against Docker container
 npm run test:docker
+
+# Run tests with visible browser
+npm run test:headed
 ```
 
-## Game Mechanics
+## 📦 Container Registry
+
+Docker images are automatically built and published to GitHub Container Registry:
+
+- **Latest**: `ghcr.io/jedarden-org/asteroids-game:latest`
+- **Tagged Versions**: `ghcr.io/jedarden-org/asteroids-game:v1.0.0`
+- **Branch Builds**: `ghcr.io/jedarden-org/asteroids-game:main`
+
+## 🎯 Game Mechanics
 
 - **Ship**: Controlled with WASD keys, shoots with spacebar
 - **Asteroids**: Three sizes (large, medium, small) that split when shot
@@ -70,43 +93,80 @@ npm run test:docker
 - **Wrapping**: Objects wrap around screen edges
 - **Physics**: Realistic momentum and rotation
 
-## Technical Details
+## 🏗️ CI/CD Pipeline
 
-- **Pure JavaScript**: No frameworks, vanilla JS
+The repository includes automated workflows for:
+
+- **Docker Build & Deploy**: Builds and publishes Docker images to GHCR
+- **Test Suite**: Runs Playwright tests on every PR/push
+- **Self-hosted Runners**: Optimized for jedarden-org infrastructure
+- **Multi-branch Support**: Builds for main, develop, and tagged releases
+
+## 🔧 Technical Details
+
+- **Pure JavaScript**: No frameworks, vanilla JS for maximum performance
 - **HTML5 Canvas**: Hardware-accelerated rendering
 - **Object-Oriented**: Clean class-based architecture
-- **Docker**: nginx:alpine for minimal container size
+- **Docker**: nginx:alpine for minimal container size (~23MB)
 - **TDD**: Comprehensive Playwright test suite
+- **GitHub Actions**: Automated CI/CD with self-hosted runners
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 asteroid-game/
-├── public/           # Game files
-│   ├── index.html   # Main HTML
-│   ├── style.css    # Styling
-│   └── game.js      # Game logic
-├── tests/           # Playwright tests
-├── docker/          # Docker configs
-├── Dockerfile       # Container definition
-└── docker-compose.yml
+├── public/                    # Game files
+│   ├── index.html            # Main HTML
+│   ├── style.css             # Styling
+│   └── game.js               # Game logic
+├── tests/                    # Playwright tests
+│   └── game.spec.js         # Test specifications
+├── .github/workflows/        # GitHub Actions
+│   ├── docker-build-deploy.yml
+│   └── test.yml
+├── docker-compose.prod.yml   # Production Docker Compose
+├── Dockerfile               # Container definition
+└── package.json            # Dependencies and scripts
 ```
 
-## Performance
+## 🚀 Performance
 
-- 60 FPS game loop
-- Efficient collision detection
-- Optimized rendering with canvas
-- Minimal Docker image (~23MB)
+- 60 FPS game loop with requestAnimationFrame
+- Efficient collision detection algorithms
+- Optimized rendering with HTML5 Canvas
+- Minimal Docker image size (~23MB)
+- Fast startup time
 
-## Browser Support
+## 🌐 Browser Support
 
 Works on all modern browsers that support HTML5 Canvas:
-- Chrome/Chromium
-- Firefox
-- Safari
-- Edge
+- Chrome/Chromium 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
 
-## License
+## 🤝 Contributing
 
-Open source - feel free to use and modify!
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Write tests first (TDD approach)
+4. Implement the feature
+5. Ensure all tests pass (`npm test`)
+6. Commit changes (`git commit -m 'Add amazing feature'`)
+7. Push to branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+## 🔒 Security
+
+- Container runs with minimal privileges
+- No sensitive data in Docker image
+- Automated security scanning in CI/CD
+- HTTPS-ready deployment configuration
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+Built with ❤️ using Test-Driven Development and containerized with Docker for the jedarden-org infrastructure.
