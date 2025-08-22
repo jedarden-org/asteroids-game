@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  asteroids-game:
+    image: ghcr.io/jedarden-org/asteroids-game:latest
+    container_name: asteroids-game-prod
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

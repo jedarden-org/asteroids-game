@@ -1,0 +1,11 @@
+node_modules
+tests
+src
+.git
+.gitignore
+package.json
+package-lock.json
+playwright.config.js
+docker-compose.yml
+README.md
+.dockerignore

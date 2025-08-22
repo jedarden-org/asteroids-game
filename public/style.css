@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #0f0;
+    border-bottom: none;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.score, .lives {
+    font-size: 20px;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+}
+
+#gameCanvas {
+    border: 2px solid #0f0;
+    background: radial-gradient(ellipse at center, #001 0%, #000 100%);
+    display: block;
+    box-shadow: 0 0 20px #0f0;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #f00;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.game-over h2 {
+    color: #f00;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #f00;
+}
+
+.game-over p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.instructions {
+    position: absolute;
+    right: -250px;
+    top: 50px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #0f0;
+    padding: 20px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.instructions h3 {
+    color: #0f0;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #0f0;
+}
+
+.instructions ul {
+    list-style: none;
+}
+
+.instructions li {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ccc;
+}

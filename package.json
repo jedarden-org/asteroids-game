@@ -1,0 +1,17 @@
+{
+  "name": "asteroid-game",
+  "version": "1.0.0",
+  "description": "Classic Asteroids game built with TDD",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:docker": "npm run docker:build && npm run docker:run && npm run test",
+    "docker:build": "docker build -t asteroid-game .",
+    "docker:run": "docker run -d -p 8080:80 --name asteroid-game asteroid-game",
+    "docker:stop": "docker stop asteroid-game && docker rm asteroid-game",
+    "serve": "cd public && python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
